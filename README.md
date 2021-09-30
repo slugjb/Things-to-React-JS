@@ -98,8 +98,39 @@ ReactDOM.render(
   const a = ...class2; // X
   const a = [...class2]; // O
   ```
-
+  가장 큰 장점은 조작(mutation)이나 부수 효과(side effect)로 인한 문제를 피할 수 있다.
+  또한, push(), splice(), concat()등의 배열 메소드를 외울 필요 없이 간결하게 코드 작성이 가능하다.
+  위 메소드들은 원본 배열 값을 변경하는데, 펼침 연산자는 원본 배열을 변경하지 않는다.
+ ```
+  const class1 = [1, 2, 3];
+  const class2 = [4, 5, 6];
+  
+  // concat()
+  const class3 = [...class1, ...class2]; 
+  console.log(class3); // [ 1, 2, 3, 4, 5, 6 ] 
+  
+  // push() 
+  const class4 = [...class1, 7];
+  onsole.log(class4); // [ 1, 2, 3, 7 ] 
+  
+  // splice() 
+  const class5 = [...class1.slice(0, 2)]; 
+  console.log(class5); // [ 1, 2 ]
+```
+ 이 외에도 함수의 매개변수에 값을 전달할 때도 코드를 편하게 관리 할 수 있다.
+ ```
+ const student = ['John', 19, 'A+'];
  
+ function introduce(name, age, grade) {
+   console.log(`${name}(${age}) - ${grade}`);
+ } 
+ 
+ introduce(student[0], student[1], student[2]); // John(19) - A+
+ 
+ introduce(...student); // John(19) - A+
+```
+
+
 
 ## 보충 필요, 매우 중요 (정리 및 공부)
 ***
