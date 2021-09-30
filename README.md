@@ -307,6 +307,15 @@ http header를 사용해서 appcation이 다른 origin의 resources에 접근 �
 
 ## Log4j / Slf4j
 
- ~~
+  * log4j
+      > 자바 기반 로깅 유틸리티, 디버그용 도구로 주로 사용된다.
+      > 애플리케이션에 문제 발생 시, 로깅을 활성화하면 문제의 위치를 정확히 파악할 수 있다.
+      > 속도 및 성능에 영향을 미치지 않고 편리하게 사용할 수 있다.
+    
+    참고 : https://cheershennah.tistory.com/80 , https://cofs.tistory.com/354
  
- 
+  * slf4j
+      > log4j, logback, commons-logging 같은 로깅 프레임워크를 위한 추상화를 제공해준다.
+
+  
+
