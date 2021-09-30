@@ -43,7 +43,7 @@
 ***
 
 
-## 보충 필요, 매우 중요 (Header) 33
+## 보충 필요, 매우 중요 (정리 및 공부)
 ***
 
 ## CORS(Cross-Origin Resource Sharing)
