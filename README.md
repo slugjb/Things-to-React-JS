@@ -1,4 +1,4 @@
-### Spring
+#### Spring
 ***
 ## RequestMapping
 
@@ -41,7 +41,7 @@
 ## RequiredArgsConstructor
 ## POM -> Gradle
 ***
-### React JS
+#### React JS
 ***
 ## 클래스형 컴포넌트
   * 특징
@@ -296,7 +296,7 @@ ReactDOM.render(
  ## useEffect - life cycle를 대채하는 Hook    
   
 
-### 보충 필요, 매우 중요 (정리 및 공부)
+#### 보충 필요, 매우 중요 (정리 및 공부)
 ***
 
 ## CORS(Cross-Origin Resource Sharing)
