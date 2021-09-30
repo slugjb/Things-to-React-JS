@@ -1,4 +1,4 @@
-## Spring
+### Spring
 ***
 ## RequestMapping
 
@@ -41,8 +41,27 @@
 ## RequiredArgsConstructor
 ## POM -> Gradle
 ***
-## React JS
+### React JS
 ***
+## 클래스형 컴포넌트
+  * 특징
+      1) render()메소드와 Component 상속 필수
+      
+  * 단점
+      1) state, props 사용 불편
+      2) 많은 메모리 사용
+
+## 함수형 컴포넌트
+   * 특징
+       1) 간편한 컴포넌트 선언 및 프로그래밍 가능
+       2) Reack Hook 사용
+   
+   * ~~단점~~
+       1) ~~state와 생명주기(Life Cycle) 메소드를 별도로 구현해야 함~~
+            => useState, useEffect 사용
+      
+      
+
 ## package.json
  1) 정의
    * 프로젝트의 정보를 정의하고, 의존하는 패키지 버전 정보를 명시하는 파일이다.
@@ -200,6 +219,7 @@ ReactDOM.render(
 
 ## VDOM
 ## DOM(Document Object Model)
+## BOM(Browser Object Model)
  
 ## React - Hook
    https://ko.reactjs.org/docs/hooks-intro.html 
@@ -212,10 +232,42 @@ ReactDOM.render(
     
     생명주기 먼저 공부
     
-    
-## React Component 생명주기
+  
+## React Component 생명주기  // VDOM 개념 필요
 
-## 보충 필요, 매우 중요 (정리 및 공부)
+  모든 컴포넌트는 
+   초기화 -> 업데이트 -> 소멸 단계를 거치게되고,
+   각 단계에서 메소드들이 정해진 순서대로 호출되는데,
+   이때 호출되는 메소드를 생명 주기 메소드라고 부른다.
+
+
+  * class형 component 생명주기
+  
+  * 마운트(생성)
+   1) state, context, defaultProps 저장
+   2) componentWillMount
+   3) render
+   4) componentDidMount
+
+      Mount : 컴포넌트가 처음 실행 되는 것
+      
+      컴포넌트가 시작되면 우선 state, context, defaultProps 저장 하고 후에,
+      componentWillMount 메소드를 호출한다. 그리고 render로 컴포넌트를 DOM에
+      부착한 후 Mount가 완료된 후에 componentDidMount가 호출된다.
+      
+      주의할 점은, componentWillMount단계에서는 props나 state를 바꾸면 안 된다.
+      Mount 중이기 때문이고, 아직 DOM에 render하지 않았기 때문에 DOM에도 접근할 수 없다.
+      componentDidMount에서는 DOM에 접근할 수 있기 때문에, 여기서는 주로 AJAX 요청이나,
+      setTimeout, setlnterval같은 행동을 한다.
+      
+   * 업데이트
+
+   * 마운트 해제(제거)  
+      
+ ## useEffect - life cycle를 대채하는 Hook    
+  
+
+### 보충 필요, 매우 중요 (정리 및 공부)
 ***
 
 ## CORS(Cross-Origin Resource Sharing)
