@@ -55,7 +55,6 @@
  3) 패키지 정보
    * "dependencies": 프로덕션 환경에서 응용 프로그램에 필요한 패키지
    * "devDependencies" 로컬 개발 및 테스트에만 필요한 패키지
-   * 
 
 ## 시맨틱 버저닝
    dot을 기준으로 3영역 Major, Minor, Patch로 나뉜다.
@@ -64,7 +63,24 @@
   >작성 규칙
 
   ![image](https://user-images.githubusercontent.com/64000158/135395178-5041b73e-e3c2-4ba5-9cb1-b725bf6869df.png)
+  
+## 틸드(~)와 캐럿(^)
+ 1) 틸드(tilde)
+``` 
+   "devDependencies": {
+      "@vue/cli-service": "~4.3.0",
+   },```
+   해당 패키지의 패치 레벨 변경을 허용하겠다는 의미이다.
+    4.3.0 이상, 4.4.0 미만과 같은 의미이다.
 
+2) 캐럭(caret)
+    ```
+  "dependencies": {
+     "vue": "^2.6.11"
+   }```
+   해당 패키지의 마이너, 패치 변경을 허용하겠다는 의미이다.
+   2.6.11 이상, 3.0.0 미만과 같은 의미이다.
+   
 
 ## Entity code
  * 마크업 언어와 충돌하는 것을 방지하기 위해 HEML에서 규정한 문자열의 코드 
