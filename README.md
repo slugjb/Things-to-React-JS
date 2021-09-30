@@ -57,8 +57,8 @@
        2) Reack Hook 사용
    
    * ~~단점~~
-       1) ~~state와 생명주기(Life Cycle) 메소드를 별도로 구현해야 함~~
-            => useState, useEffect 사용
+       1) ~~state와 생명주기(Life Cycle) 사용을 위해서는 클래스형으로 구현해야 함~~
+            => useState, useEffect 사용(React Hook)
       
       
 
