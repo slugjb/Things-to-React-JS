@@ -41,6 +41,18 @@
 
 ## React JS
 ***
+## package.json
+ 1) 정의
+   * 프로젝트의 정보를 정의하고, 의존하는 패키지 버전 정보를 명시하는 파일이다.
+   * 프로젝트의 정보 - name, verson 영역
+   * 패키지 버전 정보 - dependencies 또는 devDependencies 영역
+   
+ 2) 프로젝트 정보
+   * package.json 파일은 반드시 name과 version 항목을 포함해야 한다.
+   * name -> 소문자 한 단어로 이루어져야한다. 하이픈( - )과 언더스코어( _ )가 포함 될 수 있다.
+   * version -> x.x.x 형식을 따라야 하며, 작성 큐칙을 ```시맨틱 버저닝``` 이라고 한다.
+
+
 
 ## Entity code
  * 마크업 언어와 충돌하는 것을 방지하기 위해 HEML에서 규정한 문자열의 코드 
