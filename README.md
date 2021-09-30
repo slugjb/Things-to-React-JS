@@ -46,6 +46,30 @@
  * 마크업 언어와 충돌하는 것을 방지하기 위해 HEML에서 규정한 문자열의 코드 
 
      특정 문자열을 코드로 표기한 집합이다.
+     
+## JSX
+ * Javascript 와 XML를 합쳐서 탄생한 기존 자바스크립트의 확장 문법
+   * 스크립트 내부에 마크업 코드 작성 가능
+   * 변수나 프로퍼티의 바인딩 가능
+
+
+ex)마크업 코드 작성 예시
+ ```
+ ReactDOM.render(
+  <h1>Hello, world!</h1>,
+  document.getElementById('root')
+);
+```
+↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+```
+const element = <h1>Hello, world!</h1>;
+ 
+ReactDOM.render(
+  element,
+  document.getElementById('root')
+);
+```
+
 
 
 ## 보충 필요, 매우 중요 (정리 및 공부)
