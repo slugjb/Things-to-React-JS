@@ -3,7 +3,7 @@
 
 ## CORS(Cross-Origin Resource Sharing)
 
-> 매우 중요! 보충 필요 >
+> 매우 중요! 보충 필요
 
 http header를 사용해서 appcation이 다른 origin의 resources에 접근 할 수 있도록
 
