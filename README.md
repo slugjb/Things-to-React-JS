@@ -271,7 +271,7 @@ ReactDOM.render(
       호출하는 메소드
         1) static getDerivedStateFromProps
         2) shouldComponentUpdate
-              < 컴포넌트가 다시 렌더링을 해야 할지 말아야 할지 결정하는 메소드이다.
+              > 컴포넌트가 다시 렌더링을 해야 할지 말아야 할지 결정하는 메소드이다.
                 초기 렌더링 혹은 forceUpdate()호출시에는 호출되지 않는다.
                 렌더링을 방지하여 성능을 최적화하는 목적으로 사용한다.
 
