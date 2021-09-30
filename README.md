@@ -260,7 +260,20 @@ ReactDOM.render(
       componentDidMount에서는 DOM에 접근할 수 있기 때문에, 여기서는 주로 AJAX 요청이나,
       setTimeout, setlnterval같은 행동을 한다.
       
-   * 업데이트
+   * 업데이트 - 리액트 컴포넌트가 업데이트 되는것을 말함
+
+      업데이트가 발생하는 경우
+        1) props가 바뀔 때
+        2) state가 바뀔 때
+        3) 부모 컴포넌트가 리렌더링될 때
+        4) 강제로 트리거를 발생시킬 때
+
+      호출하는 메소드
+        1) static getDerivedStateFromProps
+        2) shouldComponentUpdate
+              < 컴포넌트가 다시 렌더링을 해야 할지 말아야 할지 결정하는 메소드이다.
+                초기 렌더링 혹은 forceUpdate()호출시에는 호출되지 않는다.
+                렌더링을 방지하여 성능을 최적화하는 목적으로 사용한다.
 
    * 마운트 해제(제거)  
       
