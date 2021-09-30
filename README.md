@@ -52,6 +52,14 @@
    * name -> 소문자 한 단어로 이루어져야한다. 하이픈( - )과 언더스코어( _ )가 포함 될 수 있다.
    * version -> x.x.x 형식을 따라야 하며, 작성 큐칙을 ```시맨틱 버저닝``` 이라고 한다.
 
+ 3) 패키지 정보
+   * "dependencies": 프로덕션 환경에서 응용 프로그램에 필요한 패키지
+   * "devDependencies" 로컬 개발 및 테스트에만 필요한 패키지
+   * 
+
+## 시맨틱 버저닝
+   dot을 기준으로 3영역 Major, Minor, Patch로 나뉜다.
+![image](https://user-images.githubusercontent.com/64000158/135395088-9fcbfd11-2440-429f-a1a5-f237233e76b2.png)
 
 
 ## Entity code
