@@ -204,6 +204,15 @@ ReactDOM.render(
 ## React - Hook
    https://ko.reactjs.org/docs/hooks-intro.html 
     분석 필요
+    
+    React component는 클래스형과 함수형으로 나뉘는데, 기존의 개발방식은 함수형을 주로 사용하되
+    state나 life cycle method를 사용해야 할 때만 클래스형을 사용하는 방식.
+    
+    state나 life cycle method를 사용해야 할 때는 클래스형 사용.
+    
+    생명주기 먼저 공부
+    
+    
 ## React Component 생명주기
 
 ## 보충 필요, 매우 중요 (정리 및 공부)
