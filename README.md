@@ -61,6 +61,9 @@
    dot을 기준으로 3영역 Major, Minor, Patch로 나뉜다.
 ![image](https://user-images.githubusercontent.com/64000158/135395088-9fcbfd11-2440-429f-a1a5-f237233e76b2.png)
 
+  >작성 규칙
+  ![image](https://user-images.githubusercontent.com/64000158/135395178-5041b73e-e3c2-4ba5-9cb1-b725bf6869df.png)
+
 
 ## Entity code
  * 마크업 언어와 충돌하는 것을 방지하기 위해 HEML에서 규정한 문자열의 코드 
