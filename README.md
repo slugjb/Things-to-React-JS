@@ -108,9 +108,7 @@
 
 ![image](https://user-images.githubusercontent.com/64000158/135398430-be860b15-b3c6-434f-9fd2-4055a8bb30e8.png)
 
-## DOM(Document Object Model)
- 
-  #1)
+
 
 ## Entity code
  * 마크업 언어와 충돌하는 것을 방지하기 위해 HEML에서 규정한 문자열의 코드 
@@ -201,6 +199,8 @@ ReactDOM.render(
 ```
 
 ## VDOM
+## DOM(Document Object Model)
+ 
 ## React - Hook
    https://ko.reactjs.org/docs/hooks-intro.html 
     분석 필요
