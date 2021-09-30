@@ -200,7 +200,9 @@ ReactDOM.render(
  introduce(...student); // John(19) - A+
 ```
 
-
+## VDOM
+## React - Hook
+## React Component 생명주기
 
 ## 보충 필요, 매우 중요 (정리 및 공부)
 ***
