@@ -274,8 +274,24 @@ ReactDOM.render(
               > 컴포넌트가 다시 렌더링을 해야 할지 말아야 할지 결정하는 메소드이다.
                 초기 렌더링 혹은 forceUpdate()호출시에는 호출되지 않는다.
                 렌더링을 방지하여 성능을 최적화하는 목적으로 사용한다.
+        3) render
+        4) getSnapshotBeforeUpdate
+              > render 메소드 호출 후 DOM 변화를 반영하기 직전에 호출되니ㅡㄴ 메소드
+              > 여기서 return된 값을 componentDidUpdate에서 3번째 파라미터로 받아 올 수 있다.
+        5) componentDidUpdate
+              > 리렌더링을 완료한 후 실행되는 메소드.
+              > 최초 렌더링 시에는 호출되지 않음.
+              > 컴포넌트가 업데이트 되었을 때, DOM을 조작하기 위해 사용
+              >  ※ 주의 : componentDidUpdate에서 setState를 사용하면 무한 렌더링
+              >            우려가 있으므로 조건문을 잘 작성해야한다.
 
-   * 마운트 해제(제거)  
+   * 마운트 해제(제거)  - 리액트 컴포넌트가 DOM상에서 제거되는 것
+        1) componentWillUnmount
+              > 컴포넌트가 DOM에서 제거되기 직전에 호출되는 메소드이다.
+              > 타이머를 제거하거나 데이터구독해제등의 목적으로 사용된다.
+              >   ※ 주의 : componentWillUnmount가 호출된 컴포넌트는 다시
+              >             렌더링 하지 않으므로, setState를 호출하면 안된다.
+              
       
  ## useEffect - life cycle를 대채하는 Hook    
   
