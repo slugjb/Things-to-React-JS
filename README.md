@@ -1,8 +1,5 @@
 ## Spring
 ***
-
-
-
 ## RequestMapping
 
 특정 url로 요청하면 controller에서 어떠한 방식으로 처리할지 정의하는데,
@@ -37,8 +34,13 @@
   
   body의 타입은 Content-Type 헤더에 따라 결정 된다.
 
-
-
+## PathVariables
+## @RequestBody 와 @RequestParam
+## Spring Boot Application
+## Autowired
+## RequiredArgsConstructor
+## POM -> Gradle
+***
 ## React JS
 ***
 ## package.json
@@ -106,6 +108,9 @@
 
 ![image](https://user-images.githubusercontent.com/64000158/135398430-be860b15-b3c6-434f-9fd2-4055a8bb30e8.png)
 
+## DOM(Document Object Model)
+ 
+  #1)
 
 ## Entity code
  * 마크업 언어와 충돌하는 것을 방지하기 위해 HEML에서 규정한 문자열의 코드 
