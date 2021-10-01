@@ -75,21 +75,21 @@ const App = () =>{
      * useState 함수를 호출하면 배열을 반환함.
      * 처음 원소는 현재 상태, 두번째 원소는 Setter 함수이다. 
      
-     `조사 필요`
+     조사 필요
      
 # 3. props
 
   ## 클래스형 컴포넌트
      * this.props로 값을 불러올 수 있다.
      
-
+```
 class App extends Component {
   render() {
       const { number, testName } = this.props
     return <div>{testName}의 나이는 {number}세 입니다.<div>
    }
  }
-
+```
    
   ## 함수형 컴포넌트
      * props를 불러올 필요 없이 바로 호출 할 수 있다.
