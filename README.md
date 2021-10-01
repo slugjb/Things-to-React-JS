@@ -378,7 +378,7 @@ ReactDOM.render(
     
     state나 life cycle method를 사용해야 할 때는 클래스형 사용.
     
-    생명주기 먼저 공부
+  `생명주기 먼저 공부`
     
   
 ## React Component 생명주기  // VDOM 개념 필요
@@ -388,7 +388,7 @@ ReactDOM.render(
    각 단계에서 메소드들이 정해진 순서대로 호출되는데,
    이때 호출되는 메소드를 생명 주기 메소드라고 부른다.
 
-
+`보충 필요`
   ### 클래스형 component 생명주기
   
   * 마운트(생성)
@@ -446,8 +446,8 @@ ReactDOM.render(
 
 ### 형 component 생명주기
               
-              
-              
+`보충 필요`         
 ***      
  ## useEffect - life cycle를 대채하는 Hook    
 
+`보충 필요`
