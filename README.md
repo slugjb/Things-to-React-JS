@@ -24,14 +24,14 @@
 
 ## 클래스형 컴포넌트
   * 특징
-      1. class 키워드 필요
-      2. render()메소드와 Component 상속 필수
-      3. state, lifeCycle 관련 기능 사용 가능
-      4. 임의 메소드 정의 가능
+      * class 키워드 필요
+      * render()메소드와 Component 상속 필수
+      * state, lifeCycle 관련 기능 사용 가능
+      * 임의 메소드 정의 가능
       
   * 단점
-      1. state, props 사용 불편
-      2. 많은 메모리 사용
+      * state, props 사용 불편
+      * 많은 메모리 사용
       
 ```
 import Reac, { Component } from 'react'
@@ -47,12 +47,12 @@ export default App
 ```
 ## 함수형 컴포넌트
    * 특징
-       1. 간편한 컴포넌트 선언 및 프로그래밍 가능
-       2. Reack Hook 사용
-       3. 컴포넌트 선언이 편하다
+       * 간편한 컴포넌트 선언 및 프로그래밍 가능
+       * Reack Hook 사용
+       * 컴포넌트 선언이 편하다
    
    * ~~단점~~
-       1. ~~state와 생명주기(Life Cycle) 사용을 위해서는 클래스형으로 구현해야 함~~
+       * ~~state와 생명주기(Life Cycle) 사용을 위해서는 클래스형으로 구현해야 함~~
             => useState, useEffect 사용(React Hook)
 ```
 import Reac from "react"
