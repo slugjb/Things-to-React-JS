@@ -328,9 +328,9 @@ ReactDOM.render(
    * "devDependencies" 로컬 개발 및 테스트에만 필요한 패키지
    
    
-## VDOM
-## DOM(Document Object Model)
 ## BOM(Browser Object Model)
+## DOM(Document Object Model)
+## VDOM
  
 ## React - Hook
    https://ko.reactjs.org/docs/hooks-intro.html 
