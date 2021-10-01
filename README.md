@@ -352,7 +352,7 @@ ReactDOM.render(
    이때 호출되는 메소드를 생명 주기 메소드라고 부른다.
 
 
-  * class형 component 생명주기
+  ### 형 component 생명주기
   
   * 마운트(생성)
    1) state, context, defaultProps 저장
@@ -402,7 +402,15 @@ ReactDOM.render(
               > 타이머를 제거하거나 데이터구독해제등의 목적으로 사용된다.
               >   ※ 주의 : componentWillUnmount가 호출된 컴포넌트는 다시
               >             렌더링 하지 않으므로, setState를 호출하면 안된다.
+
+![image](https://user-images.githubusercontent.com/64000158/135568707-9b3b34bb-216c-41b4-ab66-b2845d367f63.png)
+
+
+
+### class형 component 생명주기
               
-      
+              
+              
+***      
  ## useEffect - life cycle를 대채하는 Hook    
 
