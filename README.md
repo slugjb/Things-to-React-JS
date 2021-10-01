@@ -55,7 +55,7 @@ export default App
        1. ~~state와 생명주기(Life Cycle) 사용을 위해서는 클래스형으로 구현해야 함~~
             => useState, useEffect 사용(React Hook)
 ```
-import Reac from 'react'
+import Reac from "react"
 
 const App = () =>{
   const name = '함수형 컴포넌트'
