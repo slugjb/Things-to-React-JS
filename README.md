@@ -99,7 +99,53 @@ const App = ({ number, testName }) => {
    )
 }
 ```
-      
+
+# 4. 이벤트 핸들링
+
+  ## 클래스형 컴포넌트
+   * 함수 선언시 화살표 함수로 바로 선언 가능하다.
+   * 요소에 적용시 this.를 붙여줘야 한다.
+```
+class App extends Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      number: 1
+    }
+  }
+  onClickFunc = () => {
+    this.setState({number : this.number+1})
+  }
+  render() {
+    return (
+     <div>
+       <button onClick={this.onClickFunc}> 증가 </button>
+     </div>
+    )
+  }
+}
+
+export default App
+```
+  ## 함수형 컴포넌트
+   * const + 함수 형태로 선언해야 한다.
+   * 요소에 적용할때 this 필요 없다.
+```
+const App = () => {
+  const [ number, setNumber ] = useState('')
+  
+  const onClickFunc = () => {
+    setNumber(number +1)
+  }
+  return (
+    <div>
+       <button onClick={onClickFunc}> 증가 </button>
+    </div>
+  )
+}
+
+export default App
+```
 ## State와 Props(Properties)
  1) State
       컴포넌트의 상태를 나타내며, 컴포넌트 내부에 선언되기 때문에 변할 수 있으며,      
