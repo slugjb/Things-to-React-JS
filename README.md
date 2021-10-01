@@ -69,8 +69,6 @@ const App = () =>{
      * constructor 없이도 state 초기값 설정 가능
      * this.setState()를 통해 state값을 변경
      * 클래스형의 state는 객체형식
-```
-
   
   ## 함수형 컴포넌트
      * useState 함수로 state를 사용한다
