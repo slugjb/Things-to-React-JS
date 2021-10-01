@@ -18,7 +18,7 @@
     * state를 가지고 있고, 리덕스에 직접 접근하여 데이터를 가져온다.
     * dispatch를 하는 함수를 여기서 구현한다.
     
-# 클래스형 컴포넌트와 함수형 컴포넌트의 차이
+# 클래스형 컴포넌트와 함수형 컴포넌트의 차이 (역할은 동일)
 ***
 # 1. 선언 방식
 
@@ -61,23 +61,61 @@ const App = () =>{
   return <div> {name} </div>
   }
 ```
-      
-      
+# 2. State
 
-## package.json
- 1) 정의
-   * 프로젝트의 정보를 정의하고, 의존하는 패키지 버전 정보를 명시하는 파일이다.
-   * 프로젝트의 정보 - name, verson 영역
-   * 패키지 버전 정보 - dependencies 또는 devDependencies 영역
-   
- 2) 프로젝트 정보
-   * package.json 파일은 반드시 name과 version 항목을 포함해야 한다.
-   * name -> 소문자 한 단어로 이루어져야한다. 하이픈( - )과 언더스코어( _ )가 포함 될 수 있다.
-   * version -> x.x.x 형식을 따라야 하며, 작성 큐칙을 ```시맨틱 버저닝``` 이라고 한다.
+  ## 클래스형 컴포넌트
 
- 3) 패키지 정보
-   * "dependencies": 프로덕션 환경에서 응용 프로그램에 필요한 패키지
-   * "devDependencies" 로컬 개발 및 테스트에만 필요한 패키지
+
+
+## State와 Props(Properties)
+ 1) State
+      컴포넌트의 상태를 나타내며, 컴포넌트 내부에 선언되기 때문에 변할 수 있으며,      
+      이러한 state는 외부에 공개하지 않고, 컴포넌트가 스스로 관리한다.      
+      state로 사용되는 주된 값으로는 리스트에서 선택된 값, 체크박스 체크값, 텍스트 박스의 값 등등.
+      
+      * 상태에 따라 변하는 것
+      * 직접 변경 가능
+      * state가 변경되면 컴포넌트를 다시 렌더링 해야함
+      * 외부에는 비공개, 컴포넌트 스스로 관리
+
+2) Props
+      State와의 간단한 차이로는, 변할 수 없다는 것이다. 컴포넌트는 상속하는 부모 컴포넌트로부터,
+      props를 받고, 이 props는 상속받은 컴포넌트 내에서 수정이 불가능하다.
+      react에서는 부모 -> 자식 일방향성 상속이기 때문이다.
+      
+      * 읽기 전용
+      * 부모 요소에서 설정
+      * 초깃값과 자료형의 유요성 검사가 가능
+
+![image](https://user-images.githubusercontent.com/64000158/135398430-be860b15-b3c6-434f-9fd2-4055a8bb30e8.png)
+
+ ## Constructor(), Super() 사용 이유 
+   * Construcotr()은 state 값을 초기화 하거나 메소드를 바인딩 하기 위해 사용하고,
+    
+      해당 컴포넌트가 마운트 되기 전에 호출된다.
+      
+   * React.Component를 상속한 컴포넌트의 생성자를 구현할 때에는 다른 구문에 앞서,
+
+     super(props)를 호출해야 한다. 그렇지 않을 시 `this.props`가 생성자 내에서
+     
+     정의되지 않아 버그로 이어질 수 있다.
+     
+   * 자바스크립트에서 `super`는 부모 클래스 생성자를 가리키고, super(props) 선언 전까지,
+
+     constructor에서 `this`키워드를 사용 할 수 없다.
+     
+   * 리액트에서는 super가 constructor와 this의 실행순서로 인해 발생하는 문제
+
+     때문에, 사용하는 것을 권고하고 있다.
+     
+   * super() 선언 전에 this 사용하게 된다면?
+      > consturctor이 호출된 이후에 props가 세팅된다.
+      > 초기화 되었기에 생성자 내부의 this.prop은 undefined가 된다.
+      > 초기에는 문제가 없지만, 후에 constructor의 다른 메소드를 수정할 때 문제가 발생한다.
+      > 해당 메소드가 super()를 불러오기 전에 실행되, this가 아직 변경되지 않았으므로
+      > 에러가 발생한다
+
+
 
 ## 시맨틱 버저닝
    dot을 기준으로 3영역 Major, Minor, Patch로 나뉜다.
@@ -106,29 +144,6 @@ const App = () =>{
    해당 패키지의 마이너, 패치 변경을 허용하겠다는 의미이다.
    2.6.11 이상, 3.0.0 미만과 같은 의미이다.
    
-   
-## State와 Props(Properties)
- 1) State
-      컴포넌트의 상태를 나타내며, 컴포넌트 내부에 선언되기 때문에 변할 수 있으며,      
-      이러한 state는 외부에 공개하지 않고, 컴포넌트가 스스로 관리한다.      
-      state로 사용되는 주된 값으로는 리스트에서 선택된 값, 체크박스 체크값, 텍스트 박스의 값 등등.
-      
-      * 상태에 따라 변하는 것
-      * 직접 변경 가능
-      * state가 변경되면 컴포넌트를 다시 렌더링 해야함
-      * 외부에는 비공개, 컴포넌트 스스로 관리
-
-2) Props
-      State와의 간단한 차이로는, 변할 수 없다는 것이다. 컴포넌트는 상속하는 부모 컴포넌트로부터,
-      props를 받고, 이 props는 상속받은 컴포넌트 내에서 수정이 불가능하다.
-      react에서는 부모 -> 자식 일방향성 상속이기 때문이다.
-      
-      * 읽기 전용
-      * 부모 요소에서 설정
-      * 초깃값과 자료형의 유요성 검사가 가능
-
-![image](https://user-images.githubusercontent.com/64000158/135398430-be860b15-b3c6-434f-9fd2-4055a8bb30e8.png)
-
 
 
 ## Entity code
@@ -218,7 +233,22 @@ ReactDOM.render(
  
  introduce(...student); // John(19) - A+
 ```
+## package.json
+ 1) 정의
+   * 프로젝트의 정보를 정의하고, 의존하는 패키지 버전 정보를 명시하는 파일이다.
+   * 프로젝트의 정보 - name, verson 영역
+   * 패키지 버전 정보 - dependencies 또는 devDependencies 영역
+   
+ 2) 프로젝트 정보
+   * package.json 파일은 반드시 name과 version 항목을 포함해야 한다.
+   * name -> 소문자 한 단어로 이루어져야한다. 하이픈( - )과 언더스코어( _ )가 포함 될 수 있다.
+   * version -> x.x.x 형식을 따라야 하며, 작성 큐칙을 ```시맨틱 버저닝``` 이라고 한다.
 
+ 3) 패키지 정보
+   * "dependencies": 프로덕션 환경에서 응용 프로그램에 필요한 패키지
+   * "devDependencies" 로컬 개발 및 테스트에만 필요한 패키지
+   
+   
 ## VDOM
 ## DOM(Document Object Model)
 ## BOM(Browser Object Model)
@@ -296,28 +326,4 @@ ReactDOM.render(
               
       
  ## useEffect - life cycle를 대채하는 Hook    
- ## Constructor(), Super() 사용 이유 
-   * Construcotr()은 state 값을 초기화 하거나 메소드를 바인딩 하기 위해 사용하고,
-    
-      해당 컴포넌트가 마운트 되기 전에 호출된다.
-      
-   * React.Component를 상속한 컴포넌트의 생성자를 구현할 때에는 다른 구문에 앞서,
 
-     super(props)를 호출해야 한다. 그렇지 않을 시 `this.props`가 생성자 내에서
-     
-     정의되지 않아 버그로 이어질 수 있다.
-     
-   * 자바스크립트에서 `super`는 부모 클래스 생성자를 가리키고, super(props) 선언 전까지,
-
-     constructor에서 `this`키워드를 사용 할 수 없다.
-     
-   * 리액트에서는 super가 constructor와 this의 실행순서로 인해 발생하는 문제
-
-     때문에, 사용하는 것을 권고하고 있다.
-     
-   * super() 선언 전에 this 사용하게 된다면?
-      > consturctor이 호출된 이후에 props가 세팅된다.
-      > 초기화 되었기에 생성자 내부의 this.prop은 undefined가 된다.
-      > 초기에는 문제가 없지만, 후에 constructor의 다른 메소드를 수정할 때 문제가 발생한다.
-      > 해당 메소드가 super()를 불러오기 전에 실행되, this가 아직 변경되지 않았으므로
-      > 에러가 발생한다
