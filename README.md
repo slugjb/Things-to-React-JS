@@ -80,7 +80,7 @@ const App = () =>{
 # 3. props
 
   ## 클래스형 컴포넌트
-     * this.props로 값을 불러올 수 있다.
+    * this.props로 값을 불러올 수 있다.
      
 
 class App extends Component {
