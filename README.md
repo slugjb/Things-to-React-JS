@@ -64,9 +64,43 @@ const App = () =>{
 # 2. State
 
   ## 클래스형 컴포넌트
+     * constructor 안에서 this.state 초기 값 설정 가능
+     * constructor 없이도 state 초기값 설정 가능
+     * this.setState()를 통해 state값을 변경
+     * 클래스형의 state는 객체형식
+```
 
+  
+  ## 함수형 컴포넌트
+     * useState 함수로 state를 사용한다
+     * useState 함수를 호출하면 배열을 반환함.
+     * 처음 원소는 현재 상태, 두번째 원소는 Setter 함수이다. 
+     
+     `조사 필요`
+     
+# 3. props
 
-
+  ## 클래스형 컴포넌트
+     * this.props로 값을 불러올 수 있다.
+```
+class App extends Component {
+  render() {
+      const { number, testName } = this.props
+    return <div>{testName}의 나이는 {number}세 입니다.<div>
+   }
+ }
+```
+   
+  ## 함수형 컴포넌트
+     * props를 불러올 필요 없이 바로 호출 할 수 있다.
+```
+const App = ({ number, testName }) => {
+   return (
+     <div> {testName}의 나이는 {number}세 입니다. <div>
+   )
+}
+```
+      
 ## State와 Props(Properties)
  1) State
       컴포넌트의 상태를 나타내며, 컴포넌트 내부에 선언되기 때문에 변할 수 있으며,      
