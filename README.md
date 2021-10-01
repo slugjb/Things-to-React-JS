@@ -352,7 +352,7 @@ ReactDOM.render(
    이때 호출되는 메소드를 생명 주기 메소드라고 부른다.
 
 
-  ### 형 component 생명주기
+  ### 클래스형 component 생명주기
   
   * 마운트(생성)
    1) state, context, defaultProps 저장
@@ -407,7 +407,7 @@ ReactDOM.render(
 
 
 
-### class형 component 생명주기
+### 형 component 생명주기
               
               
               
