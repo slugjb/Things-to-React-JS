@@ -329,6 +329,13 @@ ReactDOM.render(
    
    
 ## BOM(Browser Object Model)
+ * 브라우저 전체를 객체로 관리하는 것을 말한다.
+ * 넓은 의미로는 웹 브라우저가 HTML 페이지를 인식하는 방식
+ * 좁은 의미로는 document 객체와 관련된 객체의 집합
+ * HTML 페이지는 트리 모양으로 구성, 각 요소를 노드라고 칭한다.
+![image](https://user-images.githubusercontent.com/64000158/135571312-55705560-05ae-41b0-ac12-e05d4d7949e9.png)
+
+`보충 필요`
 ## DOM(Document Object Model)
 ## VDOM
  
