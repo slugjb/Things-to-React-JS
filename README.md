@@ -16,10 +16,12 @@
     * 내부에 DOM 엘레멘트(UI)를 작성하지 않는다. 만약 사용할 경우에는 감싸는 용도
     * 스타일을 가지고 있지 않는다. -> 프레젠테이셔널 컴포넌트 내부에 전부 정의
     * state를 가지고 있고, 리덕스에 직접 접근하여 데이터를 가져온다.
-    * dispatch를 하는 함수를 여기서 
+    * dispatch를 하는 함수를 여기서 구현한다.
     
 # 클래스형 컴포넌트와 함수형 컴포넌트의 차이
 ***
+# 1. 선언 방식
+
 ## 클래스형 컴포넌트
   * 특징
       1. class 키워드 필요
@@ -59,7 +61,7 @@ const App = () =>{
   return <div> {name} </div>
   }
 ```
-   * Constructor, Super 사용 이유    
+      
       
 
 ## package.json
@@ -276,7 +278,7 @@ ReactDOM.render(
                 렌더링을 방지하여 성능을 최적화하는 목적으로 사용한다.
         3) render
         4) getSnapshotBeforeUpdate
-              > render 메소드 호출 후 DOM 변화를 반영하기 직전에 호출되니ㅡㄴ 메소드
+              > render 메소드 호출 후 DOM 변화를 반영하기 직전에 호출된 메소드이다.
               > 여기서 return된 값을 componentDidUpdate에서 3번째 파라미터로 받아 올 수 있다.
         5) componentDidUpdate
               > 리렌더링을 완료한 후 실행되는 메소드.
@@ -294,4 +296,28 @@ ReactDOM.render(
               
       
  ## useEffect - life cycle를 대채하는 Hook    
+ ## Constructor(), Super() 사용 이유 
+   * Construcotr()은 state 값을 초기화 하거나 메소드를 바인딩 하기 위해 사용하고,
+    
+      해당 컴포넌트가 마운트 되기 전에 호출된다.
+      
+   * React.Component를 상속한 컴포넌트의 생성자를 구현할 때에는 다른 구문에 앞서,
 
+     super(props)를 호출해야 한다. 그렇지 않을 시 `this.props`가 생성자 내에서
+     
+     정의되지 않아 버그로 이어질 수 있다.
+     
+   * 자바스크립트에서 `super`는 부모 클래스 생성자를 가리키고, super(props) 선언 전까지,
+
+     constructor에서 `this`키워드를 사용 할 수 없다.
+     
+   * 리액트에서는 super가 constructor와 this의 실행순서로 인해 발생하는 문제
+
+     때문에, 사용하는 것을 권고하고 있다.
+     
+   * super() 선언 전에 this 사용하게 된다면?
+      > consturctor이 호출된 이후에 props가 세팅된다.
+      > 초기화 되었기에 생성자 내부의 this.prop은 undefined가 된다.
+      > 초기에는 문제가 없지만, 후에 constructor의 다른 메소드를 수정할 때 문제가 발생한다.
+      > 해당 메소드가 super()를 불러오기 전에 실행되, this가 아직 변경되지 않았으므로
+      > 에러가 발생한다
