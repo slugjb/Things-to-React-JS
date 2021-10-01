@@ -65,12 +65,14 @@ const App = () =>{
 # 2. State
 
   ## 클래스형 컴포넌트
+  
      * constructor 안에서 this.state 초기 값 설정 가능
      * constructor 없이도 state 초기값 설정 가능
      * this.setState()를 통해 state값을 변경
      * 클래스형의 state는 객체형식
   
   ## 함수형 컴포넌트
+  
      * useState 함수로 state를 사용한다
      * useState 함수를 호출하면 배열을 반환함.
      * 처음 원소는 현재 상태, 두번째 원소는 Setter 함수이다. 
