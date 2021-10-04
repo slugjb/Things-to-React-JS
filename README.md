@@ -444,7 +444,7 @@ ReactDOM.render(
 
 ***
 
-### 함수형 component 생명주기
+###   함수형 component 생명주기
               
 `보충 필요`         
 ***      
