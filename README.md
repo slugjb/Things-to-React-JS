@@ -311,7 +311,9 @@ ReactDOM.render(
   const a = [...class2]; // O
   ```
   가장 큰 장점은 조작(mutation)이나 부수 효과(side effect)로 인한 문제를 피할 수 있다.
+  
   또한, push(), splice(), concat()등의 배열 메소드를 외울 필요 없이 간결하게 코드 작성이 가능하다.
+  
   위 메소드들은 원본 배열 값을 변경하는데, 펼침 연산자는 원본 배열을 변경하지 않는다.
  ```
   const class1 = [1, 2, 3];
@@ -393,21 +395,26 @@ ReactDOM.render(
  `DOM을 추상화한 가상의 객체`
  ### 어떤 문제를 해결하기 위한 기술인가?
   > DOM 조작에 의한 렌더링의 비효율적인 문제
-  > SPA(Single Page Application)특징으로 DOM 복잡도 증가에 따른
-  > 최적화 및 유지 보수가 더 어려워지는 문제
+  > 
+  > SPA(Single Page Application)특징으로 DOM 복잡도 증가에 따른 최적화 및 유지 보수가 더 어려워지는 문제
   > * 결론 : DOM을 반복적으로 직접 조작하면 그 만큼 브라우저가 렌더링을 자주하게 되고,
   >          그 만큼 PC 자원을 많이 소모하기 때문
  
  ### 브라우저 렌더링 방식
  ![image](https://user-images.githubusercontent.com/64000158/135573274-c6ba4591-3e57-42c6-ab33-4e709a442d95.png)
  > 위의 과정에서 문제가 되는 경우는 현대의 웹처럼 변경해야할 대상도 많고, 변경도 많은 경우이다.
+ > 
  > 프로그래밍에 의해 DOM을 변경해야 하고, 변경할 구성 요소가 100개면 위의 과정을 100번하는 비효율적이니 작업을 해왔었다.
+ > 
  > 여기서 문제는, DOM을 변경하는것이 아니라, 렌더링을 여러번 하는것이 아주 큰 문제이다.
  
  ### 해결 원리
   DOM을 추상화한 가상의 객체인 VDOM을 메모리에 만들어 두고, 변경 사항을 DOM에 직접 수정하지 않고,
+  
   중간 단계로 VDOM을 수정하고 VDOM을 통해서 DOM을 수정하게 하였다.
+  
   > VDOM에 변경 내역을 한 번에 모아고(버퍼링) 실제 DOM과 변경된 VDOM의 차이를 판단한 후에,
+  > 
   > 구성 요소의 변경된 부분만 찾아 변경하고 그에 따른 렌더링을 한 번만 하는 것으로 해결.
  
  
@@ -470,24 +477,34 @@ ReactDOM.render(
         1) static getDerivedStateFromProps
         2) shouldComponentUpdate
               > 컴포넌트가 다시 렌더링을 해야 할지 말아야 할지 결정하는 메소드이다.
-                초기 렌더링 혹은 forceUpdate()호출시에는 호출되지 않는다.
-                렌더링을 방지하여 성능을 최적화하는 목적으로 사용한다.
+              > 
+              > 초기 렌더링 혹은 forceUpdate()호출시에는 호출되지 않는다.
+              > 
+              > 렌더링을 방지하여 성능을 최적화하는 목적으로 사용한다.                            
         3) render
         4) getSnapshotBeforeUpdate
               > render 메소드 호출 후 DOM 변화를 반영하기 직전에 호출된 메소드이다.
+              > 
               > 여기서 return된 값을 componentDidUpdate에서 3번째 파라미터로 받아 올 수 있다.
         5) componentDidUpdate
               > 리렌더링을 완료한 후 실행되는 메소드.
+              > 
               > 최초 렌더링 시에는 호출되지 않음.
+              > 
               > 컴포넌트가 업데이트 되었을 때, DOM을 조작하기 위해 사용
+              > 
               >  ※ 주의 : componentDidUpdate에서 setState를 사용하면 무한 렌더링
+              >  
               >            우려가 있으므로 조건문을 잘 작성해야한다.
 
    * 마운트 해제(제거)  - 리액트 컴포넌트가 DOM상에서 제거되는 것
         1) componentWillUnmount
               > 컴포넌트가 DOM에서 제거되기 직전에 호출되는 메소드이다.
+              > 
               > 타이머를 제거하거나 데이터구독해제등의 목적으로 사용된다.
+              > 
               >   ※ 주의 : componentWillUnmount가 호출된 컴포넌트는 다시
+              >   
               >             렌더링 하지 않으므로, setState를 호출하면 안된다.
 
      ![image](https://user-images.githubusercontent.com/64000158/135568707-9b3b34bb-216c-41b4-ab66-b2845d367f63.png)
