@@ -37,7 +37,7 @@
       * 많은 메모리 사용
       
 ```
-import Reac, { Component } from 'react'
+import React, { Component } from 'react'
 
 class App extends Component{
   render(){
