@@ -18,6 +18,9 @@
     * state를 가지고 있고, 리덕스에 직접 접근하여 데이터를 가져온다.
     * dispatch를 하는 함수를 여기서 구현한다.
     
+    
+    
+    
 # 클래스형 컴포넌트와 함수형 컴포넌트의 차이 (역할은 동일)
 ***
 # 1. 선언 방식
@@ -62,6 +65,8 @@ const App = () =>{
   return <div> {name} </div>
   }
 ```
+
+
 # 2. State
 
   ## 클래스형 컴포넌트
@@ -76,6 +81,7 @@ const App = () =>{
    * 처음 원소는 현재 상태, 두번째 원소는 Setter 함수이다. 
      
      조사 필요 보충 
+     
      
 # 3. props
 
@@ -99,6 +105,7 @@ const App = ({ number, testName }) => {
    )
 }
 ```
+
 
 # 4. 이벤트 핸들링
 
@@ -146,6 +153,9 @@ const App = () => {
 
 export default App
 ```
+
+
+
 ## State와 Props(Properties)
  1) State
       컴포넌트의 상태를 나타내며, 컴포넌트 내부에 선언되기 때문에 변할 수 있으며,      
@@ -167,6 +177,9 @@ export default App
       * 초깃값과 자료형의 유요성 검사가 가능
 
 ![image](https://user-images.githubusercontent.com/64000158/135398430-be860b15-b3c6-434f-9fd2-4055a8bb30e8.png)
+
+
+
 
  ## Constructor(), Super() 사용 이유 
    * Construcotr()은 state 값을 초기화 하거나 메소드를 바인딩 하기 위해 사용하고,
@@ -196,6 +209,8 @@ export default App
 
 
 
+
+
 ## 시맨틱 버저닝
    dot을 기준으로 3영역 Major, Minor, Patch로 나뉜다.
 ![image](https://user-images.githubusercontent.com/64000158/135395088-9fcbfd11-2440-429f-a1a5-f237233e76b2.png)
@@ -203,6 +218,9 @@ export default App
   >작성 규칙
 
   ![image](https://user-images.githubusercontent.com/64000158/135395178-5041b73e-e3c2-4ba5-9cb1-b725bf6869df.png)
+  
+  
+  
   
 ## 틸드(~)와 캐럿(^)
  1) 틸드(tilde)
@@ -225,10 +243,15 @@ export default App
    
 
 
+
+
 ## Entity code
  * 마크업 언어와 충돌하는 것을 방지하기 위해 HEML에서 규정한 문자열의 코드 
 
      특정 문자열을 코드로 표기한 집합이다.
+     
+     
+     
      
 ## JSX
  * Javascript 와 XML를 합쳐서 탄생한 기존 자바스크립트의 확장 문법
@@ -253,6 +276,9 @@ ReactDOM.render(
 );
 ```
 
+
+
+
 ## 바벨(Babel) - 6to5
  ES6(ECMAScript 6)를 ES5(ECMAScript 5)로 변환해준다.
  
@@ -269,6 +295,9 @@ ReactDOM.render(
  비교 할 수 있도록 컴포넌트 내부는 하나의 DOM트리 구조로 이루어져야 하기 때문이다.
  
  Fragments를 사용하면 DOM에 별도 노드를 추가하지 않고 자식 목록을 그룹화 할 수 있다.
+ 
+ 
+ 
  
  ## 펼침 연산자(spread operator)
   * 배열에 포함된 항목을 목록으로 바꿔주는 연산자이다.
@@ -312,6 +341,10 @@ ReactDOM.render(
  
  introduce(...student); // John(19) - A+
 ```
+
+
+
+
 ## package.json
  1) 정의
    * 프로젝트의 정보를 정의하고, 의존하는 패키지 버전 정보를 명시하는 파일이다.
@@ -328,12 +361,17 @@ ReactDOM.render(
    * "devDependencies" 로컬 개발 및 테스트에만 필요한 패키지
    
    
+   
+   
 ## BOM(Browser Object Model)
  * 브라우저 전체를 객체로 관리하는 것을 말한다.
  * 넓은 의미로는 웹 브라우저가 HTML 페이지를 인식하는 방식
  * 좁은 의미로는 document 객체와 관련된 객체의 집합
  * HTML 페이지는 트리 모양으로 구성, 각 요소를 노드라고 칭한다.
 ![image](https://user-images.githubusercontent.com/64000158/135571312-55705560-05ae-41b0-ac12-e05d4d7949e9.png)
+
+
+
 
 `보충 필요`
 ## DOM(Document Object Model)
@@ -346,6 +384,9 @@ ReactDOM.render(
 
  `웹 페이지를 구성하는 요소를 구조화해서 나타낸 객체고 이 객체를 이용해서 웹 페이지 구성요소를 제어할 수 있다.`
 ![image](https://user-images.githubusercontent.com/64000158/135572626-2c20585a-cd9b-4017-bfc9-8e9b69c04cb9.png)
+
+
+
 
 `보충 필요`
 ## VDOM
@@ -369,6 +410,9 @@ ReactDOM.render(
   > VDOM에 변경 내역을 한 번에 모아고(버퍼링) 실제 DOM과 변경된 VDOM의 차이를 판단한 후에,
   > 구성 요소의 변경된 부분만 찾아 변경하고 그에 따른 렌더링을 한 번만 하는 것으로 해결.
  
+ 
+ 
+ 
 ## React - Hook
    https://ko.reactjs.org/docs/hooks-intro.html 
     분석 필요
@@ -381,12 +425,18 @@ ReactDOM.render(
   `생명주기 먼저 공부`
     
   
+  
+  
 ## React Component 생명주기  // VDOM 개념 필요
 
   모든 컴포넌트는 
    초기화 -> 업데이트 -> 소멸 단계를 거치게되고,
    각 단계에서 메소드들이 정해진 순서대로 호출되는데,
    이때 호출되는 메소드를 생명 주기 메소드라고 부른다.
+
+
+
+
 
 `보충 필요`
   ### 클래스형 component 생명주기
@@ -442,11 +492,16 @@ ReactDOM.render(
 
      ![image](https://user-images.githubusercontent.com/64000158/135568707-9b3b34bb-216c-41b4-ab66-b2845d367f63.png)
 
+
 ***
 
 ###   함수형 component 생명주기
               
 `보충 필요`         
+
+
+
+
 ***      
  ## useEffect - life cycle를 대채하는 Hook    
 
