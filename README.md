@@ -564,17 +564,9 @@ const [todos, setTodos] = useState([{ text: 'Learn Hooks' }]);
  
 ## useEffect
 
-
-
-###   함수형 component 생명주기
-              
-`보충 필요`         
-
+  > React 컴포넌트 안에서 데이터 fetching, subsription, DOM을 직접 조작하는 것을 Side effect라고 한다.
+  > 
+  > 줄여서 effects라고 한다. 
 
 
 
-***      
- ## useEffect - life cycle를 대채하는 Hook    
-
-`보충 필요`
-***
