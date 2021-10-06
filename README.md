@@ -422,7 +422,7 @@ ReactDOM.render(
  
  
 ## React - Hook
-   https://ko.reactjs.org/docs/hooks-intro.html <- 참고자료
+   [참고자료](https://ko.reactjs.org/docs/hooks-intro.html)
    
    ### `개요`
    
