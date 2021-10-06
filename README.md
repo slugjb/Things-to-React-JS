@@ -414,7 +414,7 @@ ReactDOM.render(
   
   중간 단계로 VDOM을 수정하고 VDOM을 통해서 DOM을 수정하게 하였다.
   
-  > VDOM에 변경 내역을 한 번에 모아고(버퍼링) 실제 DOM과 변경된 VDOM의 차이를 판단한 후에,
+  > VDOM에 변경 내역을 한 번에 모으고(버퍼링) 실제 DOM과 변경된 VDOM의 차이를 판단한 후에,
   > 
   > 구성 요소의 변경된 부분만 찾아 변경하고 그에 따른 렌더링을 한 번만 하는 것으로 해결.
  
@@ -425,12 +425,23 @@ ReactDOM.render(
    https://ko.reactjs.org/docs/hooks-intro.html 
     분석 필요
     
+    `###개요`
+    
     React component는 클래스형과 함수형으로 나뉘는데, 기존의 개발 방식은 함수형을 주로 사용하되
-    state나 life cycle method를 사용해야 할 때만 클래스형을 사용하는 방식.
     
-    state나 life cycle method를 사용해야 할 때는 클래스형 사용.
+    state나 life cycle method를 사용해야 할 때만 클래스형을 사용하였으나,
     
-  `생명주기 먼저 공부`
+    16.8버전부터는 함수형 컴포넌트에서도 React state와 Lifecycle 기능을 사용할 수 있게 해주는
+    
+    함수인 Hook가 도입되었다. 만들어진 목적 자체가 함수 컴포넌트에서 사용하기 위함이였으니,
+    
+    클래스 컴포넌트 안에서는 동작하지 않는다.
+    
+    `###사용 규칙`
+    
+    
+    
+  
     
   
   
