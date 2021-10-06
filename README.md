@@ -417,28 +417,9 @@ ReactDOM.render(
   > VDOM에 변경 내역을 한 번에 모으고(버퍼링) 실제 DOM과 변경된 VDOM의 차이를 판단한 후에,
   > 
   > 구성 요소의 변경된 부분만 찾아 변경하고 그에 따른 렌더링을 한 번만 하는 것으로 해결.
+
  
- 
- 
- 
-## React - Hook
-   [참고자료](https://ko.reactjs.org/docs/hooks-intro.html)
-   
-   ### `개요`
-   
-   React component는 클래스형과 함수형으로 나뉘는데, 기존의 개발 방식은 함수형을 주로 사용하되
-   
-   state나 life cycle method를 사용해야 할 때마나 클래스형을 사용하였으나,
-   
-   16.8 버전부터는 함수형 컴포넌트에서도 React state와 Life cycle 기능을 사용할 수 있게 해주는
-   
-   함수인 Hook이 도입되었다. 만들어진 목적 자체가 함수형 컴포넌에서 사용하기 위함이였으니,
-   
-   당연하게도 클래스형 컴포넌트에서는 동작하지 않는다.
-    
-  
-  
-  
+
 ## React Component 생명주기  // VDOM 개념 필요
 
   모든 컴포넌트는 
@@ -516,6 +497,74 @@ ReactDOM.render(
 
 
 ***
+
+## React - Hook
+
+   [참고문서](https://ko.reactjs.org/docs/hooks-intro.html)
+   
+   ### `개요`
+   
+   React component는 클래스형과 함수형으로 나뉘는데, 기존의 개발 방식은 함수형을 주로 사용하되
+   
+   state나 life cycle method를 사용해야 할 때마나 클래스형을 사용하였으나,
+   
+   16.8 버전부터는 함수형 컴포넌트에서도 React state와 Life cycle 기능을 사용할 수 있게 해주는
+   
+   함수인 Hook이 도입되었다. 만들어진 목적 자체가 함수형 컴포넌에서 사용하기 위함이였으니,
+   
+   당연하게도 클래스형 컴포넌트에서는 동작하지 않는다.
+    
+  ### `사용 규칙`
+  
+  * 최상위에서만 Hook 호출이 가능
+     * 루프, 조건문, 중첩된 함수 안에서는 사용할 수 없음
+     * 조건문을 Hook 내부에 넣는 것은 괜찮음
+  > 컴포넌트가 렌더링 될 때마다 항상 동일한 순서로 Hook이 호출되는것이 보장되어 state를 올바르게 유지 할 수 있다.
+  
+  * 리액트 함수 컴포넌트내에서만 호출이 가능하다.
+    * 일반 자바스크립트 함수 내에서는 호출하면 안된다.
+    * custom hook 에서는 가능하다.
+
+  ### `Why`
+  
+  * 컴포넌트들 사이에서의 상태 로직을 재사용하는 것의 어려움
+     * higher-order component는 코드 추적이 어렵고 'wrapper hell' 이기 때문이다.
+     * Hook은 컴포넌트의 계층을 바꾸지 않고, 상태 로직을 재사용 할 수 있다.
+  * 복잡한 컴포넌트는 이해하기 어려움
+     * 여러 Lifecycle 메소드들이 관련 없는 로직들과 섞여 있다.
+      
+       그래서 버그가 자주 발생하고, 무결성 유지가 어렵다.   
+  * Class 컴포넌트는 인간과 기계 모두를 혼란스럽게 한다.
+     * 리액트의 진입장벽
+     * 코드가 장황해짐
+     * Class없이 React 기능을 사용해 보기 
+  
+  ## useState란?
+  
+  > Hook을 호출하여 함수형 컴포넌트에 state 변수를 선언 할 수 있는 함수 -> 
+  > 
+  > -> 컴포넌트가 다시 렌더링 되어도 그대로 유지된다.
+  > 
+  > 기존 class 컴포넌트에서 사용하던 this.state와 동일한 역할을 한다.
+  > 
+  > useState는 state 변수와 state를 업데이트 하는 함수, 두 가지 쌍을 반환한다.
+```
+const [age, setAge] = useState(20);
+const [fruit, setFruit] = useState('banana');
+const [todos, setTodos] = useState([{ text: 'Learn Hooks' }]);
+```
+ 위처럼 state를 여러 개 선언 할 수 있다. 위와 같은 표현을 `구조 분해 할당`이라고 한다.
+ 
+ 첫 번째 인자는 state의 name이고, 두 번째 인자는 state를 업데이트 할 수 있는 함수이다.
+ 
+ useState에 전달하는 인자는 state의 initial value의 값이다.
+ 
+ 객체로 넘겨주거나, 숫자, 문자 타입도 가능하다.
+ 
+ 
+## useEffect
+
+
 
 ###   함수형 component 생명주기
               
