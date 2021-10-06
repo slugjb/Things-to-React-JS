@@ -422,29 +422,19 @@ ReactDOM.render(
  
  
 ## React - Hook
-   https://ko.reactjs.org/docs/hooks-intro.html
+   https://ko.reactjs.org/docs/hooks-intro.html <- 참고자료
    
    `###개요`
    
-    `분석 필요`
-    
-    `###개요`
-    
-    React component는 클래스형과 함수형으로 나뉘는데, 기존의 개발 방식은 함수형을 주로 사용하되
-    
-    state나 life cycle method를 사용해야 할 때만 클래스형을 사용하였으나,
-    
-    16.8버전부터는 함수형 컴포넌트에서도 React state와 Lifecycle 기능을 사용할 수 있게 해주는
-    
-    함수인 Hook가 도입되었다. 만들어진 목적 자체가 함수 컴포넌트에서 사용하기 위함이였으니,
-    
-    클래스 컴포넌트 안에서는 동작하지 않는다.1
-    
-    `###사용 규칙`
-    
-    
-    
-  
+   React component는 클래스형과 함수형으로 나뉘는데, 기존의 개발 방식은 함수형을 주로 사용하되
+   
+   state나 life cycle method를 사용해야 할 때마나 클래스형을 사용하였으나,
+   
+   16.8 버전부터는 함수형 컴포넌트에서도 React state와 Life cycle 기능을 사용할 수 있게 해주는
+   
+   함수인 Hook이 도입되었다. 만들어진 목적 자체가 함수형 컴포넌에서 사용하기 위함이였으니,
+   
+   당연하게도 클래스형 컴포넌트에서는 동작하지 않는다.
     
   
   
