@@ -564,6 +564,18 @@ const [todos, setTodos] = useState([{ text: 'Learn Hooks' }]);
  
 ## useEffect
 
+  ### 기본 형태 -> `useEffect( function, deps)`
+  
+  - function : 수행하고자 하는 작업
+  
+  - deps : 배열 형태이며, 배열 안에는 검사하고자 하는 특정 값 or 빈 배열
+ 
+ 
+  useEffect 함수 불러오기
+  
+  `import React, { useEffect } from 'react';`
+
+
   > React 컴포넌트 안에서 데이터 fetching, subsription, DOM을 직접 조작하는 것을 Side effect라고 한다.
   > 
   > 줄여서 effects라고 한다. 
