@@ -571,8 +571,8 @@ ReactDOM.render(
               >   ※ 주의 : componentWillUnmount가 호출된 컴포넌트는 다시
               >   
               >             렌더링 하지 않으므로, setState를 호출하면 안된다.
+       ![image](https://user-images.githubusercontent.com/64000158/136879234-064706da-9a94-45d0-8cf8-ec94bd1b7361.png)
 
-     ![image](https://user-images.githubusercontent.com/64000158/135568707-9b3b34bb-216c-41b4-ab66-b2845d367f63.png)
 
 
 ***
