@@ -352,7 +352,14 @@ ReactDOM.render(
     match 객체에는 <Route path>와 URL이 매칭된것에 대한 정보가 담겨져있다.
  
     match.params로 path에 설정한 파라미터 값을 가져올 수 있다.
+
+> davadsv
+ > >avdasvdas
+ vdavdav>vda
  
+> vdavdav
+ > vdavda
+ >v vdavda
  
  
  
