@@ -22,7 +22,8 @@
     
     
     
-# 클래스형 컴포넌트와 함수형 컴포넌트의 차이 (역할은 동일)
+# 클래스형 컴포넌트와 함수형 컴포넌트의 차이
+# (역할은 동일)
 ***
 # 1. 선언 방식
 
@@ -57,6 +58,7 @@ export default App
    
    * ~~단점~~
        * ~~state와 생명주기(Life Cycle) 사용을 위해서는 클래스형으로 구현해야 함~~
+
             => useState, useEffect 사용(React Hook)
 ```
 import React from "react"
@@ -79,9 +81,7 @@ const App = () =>{
   ## 함수형 컴포넌트
    * useState 함수로 state를 사용한다
    * useState 함수를 호출하면 배열을 반환함.
-   * 처음 원소는 현재 상태, 두번째 원소는 Setter 함수이다. 
-     
-     조사 필요 보충 
+   * 처음 원소는 현재 상태, 두번째 원소는 Setter 함수이다.      
      
      
 # 3. props
@@ -169,44 +169,45 @@ export default App
       * 외부에는 비공개, 컴포넌트 스스로 관리
 
 2) Props
-      State와의 간단한 차이로는, 변할 수 없다는 것이다. 컴포넌트는 상속하는 부모 컴포넌트로부터,
-      props를 받고, 이 props는 상속받은 컴포넌트 내에서 수정이 불가능하다.
-      react에서는 부모 -> 자식 일방향성 상속이기 때문이다.
+      State와의 간단한 차이로는, 변할 수 없다는 것이다. 컴포넌트는 상속하는
+      
+      부모 컴포넌트로부터, props를 받고, 이 props는 상속받은 컴포넌트 내에서
+      
+      수정이 불가능하다. react에서는 부모 -> 자식 일방향성 상속이기 때문이다.
       
       * 읽기 전용
       * 부모 요소에서 설정
       * 초깃값과 자료형의 유요성 검사가 가능
 
-![image](https://user-images.githubusercontent.com/64000158/135398430-be860b15-b3c6-434f-9fd2-4055a8bb30e8.png)
+   ![image](https://user-images.githubusercontent.com/64000158/135398430-be860b15-b3c6-434f-9fd2-4055a8bb30e8.png)
 
 
 
 
  ## Constructor(), Super() 사용 이유 
-   * Construcotr()은 state 값을 초기화 하거나 메소드를 바인딩 하기 위해 사용하고,
-    
+   * Construcotr()은 state 값을 초기화 하거나 메소드를 바인딩 하기 위해 사용하고,    
       해당 컴포넌트가 마운트 되기 전에 호출된다.
       
    * React.Component를 상속한 컴포넌트의 생성자를 구현할 때에는 다른 구문에 앞서,
-
-     super(props)를 호출해야 한다. 그렇지 않을 시 `this.props`가 생성자 내에서
-     
+     super(props)를 호출해야 한다. 그렇지 않을 시 `this.props`가 생성자 내에서     
      정의되지 않아 버그로 이어질 수 있다.
      
    * 자바스크립트에서 `super`는 부모 클래스 생성자를 가리키고, super(props) 선언 전까지,
-
      constructor에서 `this`키워드를 사용 할 수 없다.
      
-   * 리액트에서는 super가 constructor와 this의 실행순서로 인해 발생하는 문제
-
-     때문에, 사용하는 것을 권고하고 있다.
+   * 리액트에서는 super가 constructor와 this의 실행순서로 인해 발생하는 문제 때문에, 
+     사용하는 것을 권고하고 있다.
      
    * super() 선언 전에 this 사용하게 된다면?
       > consturctor이 호출된 이후에 props가 세팅된다.
+      > 
       > 초기화 되었기에 생성자 내부의 this.prop은 undefined가 된다.
+      > 
       > 초기에는 문제가 없지만, 후에 constructor의 다른 메소드를 수정할 때 문제가 발생한다.
-      > 해당 메소드가 super()를 불러오기 전에 실행되, this가 아직 변경되지 않았으므로
-      > 에러가 발생한다
+      > 
+      > 해당 메소드가 super()를 불러오기 전에 실행되지만,
+      > 
+      > this가 아직 변경되지 않았으므로 에러가 발생한다
 
 
 
@@ -231,6 +232,7 @@ export default App
    },
 ```
    해당 패키지의 패치 레벨 변경을 허용하겠다는 의미이다.
+   
     4.3.0 이상, 4.4.0 미만과 같은 의미이다.
 
 2) 캐럿(caret)
@@ -240,6 +242,7 @@ export default App
    }
 ```
    해당 패키지의 마이너, 패치 변경을 허용하겠다는 의미이다.
+   
    2.6.11 이상, 3.0.0 미만과 같은 의미이다.
    
 
@@ -247,9 +250,8 @@ export default App
 
 
 ## Entity code
- * 마크업 언어와 충돌하는 것을 방지하기 위해 HEML에서 규정한 문자열의 코드 
-
-     특정 문자열을 코드로 표기한 집합이다.
+ * 마크업 언어와 충돌하는 것을 방지하기 위해 HEML에서 규정한 문자열의 코드
+   특정 문자열을 코드로 표기한 집합이다.
      
      
      
@@ -281,20 +283,15 @@ ReactDOM.render(
 
 
 ## 바벨(Babel) - 6to5
- ES6(ECMAScript 6)를 ES5(ECMAScript 5)로 변환해준다.
- 
- JSX를 브라우저가 읽기 쉬운 ES5 코드로 변환해주고, 이를 바탕으로 개발자가 
- 
+ ES6(ECMAScript 6)를 ES5(ECMAScript 5)로 변환해준다. 
+ JSX를 브라우저가 읽기 쉬운 ES5 코드로 변환해주고, 이를 바탕으로 개발자가  
  최신 문법을 사용하면서도 여러 브라우저에서 작동될 수 있는 환경 제공
  
 ## Fragments -  ``` <Fragment> </Fragment> ``` or ```<> </> ```
 
- React의 일반적인 패턴은 component가 여러개의 요소를 반환하는 것이다.
- 
- React의 규칙 중 하나로, Virtual DOM에서 컴포넌트 변화를 감지해 낼 때 효율적으로 
- 
- 비교 할 수 있도록 컴포넌트 내부는 하나의 DOM트리 구조로 이루어져야 하기 때문이다.
- 
+ React의 일반적인 패턴은 component가 여러개의 요소를 반환하는 것이다. 
+ React의 규칙 중 하나로, Virtual DOM에서 컴포넌트 변화를 감지해 낼 때 효율적으로  
+ 비교 할 수 있도록 컴포넌트 내부는 하나의 DOM트리 구조로 이루어져야 하기 때문이다. 
  Fragments를 사용하면 DOM에 별도 노드를 추가하지 않고 자식 목록을 그룹화 할 수 있다.
  
  
@@ -349,8 +346,7 @@ ReactDOM.render(
 
  * Match
     
-    match 객체에는 <Route path>와 URL이 매칭된것에 대한 정보가 담겨져있다.
- 
+    match 객체에는 <Route path>와 URL이 매칭된것에 대한 정보가 담겨져있다. 
     match.params로 path에 설정한 파라미터 값을 가져올 수 있다.
  
  ```
@@ -386,8 +382,7 @@ ReactDOM.render(
  
  * History
  
-    history 객체는 브라우저의 history와 유사하다. 스택(stack)에 현재까지 이동한 url 경로들이
- 
+    history 객체는 브라우저의 history와 유사하다. 스택(stack)에 현재까지 이동한 url 경로들이 
     담겨있는 형태로 주소를 임의로 변경하거나 되돌아갈 수 있도록 해준다.
  
 ```
@@ -420,8 +415,7 @@ ReactDOM.render(
  >
  > goBack() : [function] 스택의 포인터를 n번째로 이동
  >
- > goForward():[function] 앞 페이지로 이동
- >
+ > goForward():[function] 앞 페이지로 이동 >
  > block(prompt) : [function] history 스택의 PUSH/POP 동작을 제어
  
  
