@@ -355,10 +355,15 @@ ReactDOM.render(
  
  `
  {path: "/mypage/:userId:, url: "/mypage/ididid", isExact: ture, params: {...}} 
+ 
     path: "/mypage/:userId" 
+ 
     url: "/mypage/ididid" 
+ 
     isExact: true 
+ 
     params: {userId: "ididid"} 
+ 
     __proto__: Object
  `
 
@@ -383,6 +388,58 @@ ReactDOM.render(
  >
  > hash : [string] 현재 페이지의 hash
     
+ 
+ * History
+ 
+    history 객체는 브라우저의 history와 유사하다. 스택(stack)에 현재까지 이동한 url 경로들이
+ 
+    담겨있는 형태로 주소를 임의로 변경하거나 되돌아갈 수 있도록 해준다.
+ 
+`
+ {length/: 6, action: "POP", loaction: {...}, createHref: f, push: f, ...}
+ 
+   length: 6
+ 
+   acton: "POP"
+ 
+   location: {pathname: "/mypage/ididid", serach: "?name=kim", hash: "#hashtag", state: undefined}
+ 
+   createHref: f createHrff(loaction)
+ 
+   push: f push(path, state)
+ 
+   replace: f replace(path, state)
+ 
+   go: f go(n)
+ 
+   goBack: f goBack()
+ 
+   goForward: f goForward()
+ 
+   black: f black(prompt)
+ 
+   listen: f listen(listener)
+ 
+   __proto__: Object
+ `
+ 
+ > length : [nmber] 전체 history 스택의 길이
+ >
+ > action : [string] 최근에 수행된 action (PUSH, REPLACE or POP)
+ >
+ > locaton : [JSON object] 최근 경로 정보
+ >
+ > push(path, [state]) : [function] 새로운 경로를 history 스택으로 푸시하여 페이지를 이동
+ >
+ > replace(path, [state]) : [function] 최근 경로를 history 스택에서 교체하여 페이지를 이동
+ >
+ > go(n) : [function]:history 스택의 포인터를 n번째로 이동
+ >
+ > goBack() : [function] 스택의 포인터를 n번째로 이동
+ >
+ > goForward():[function] 앞 페이지로 이동
+ >
+ > block(prompt) : [function] history 스택의 PUSH/POP 동작을 제어
  
  
 
