@@ -571,7 +571,7 @@ ReactDOM.render(
               >   ※ 주의 : componentWillUnmount가 호출된 컴포넌트는 다시
               >   
               >             렌더링 하지 않으므로, setState를 호출하면 안된다.
-       ![image](https://user-images.githubusercontent.com/64000158/136879234-064706da-9a94-45d0-8cf8-ec94bd1b7361.png)
+     ![image](https://user-images.githubusercontent.com/64000158/136879234-064706da-9a94-45d0-8cf8-ec94bd1b7361.png)
 
 
 
@@ -643,6 +643,30 @@ const [todos, setTodos] = useState([{ text: 'Learn Hooks' }]);
  
 ## useEffect
 
+  useEffect는 몇 가지 조건에 의해 작동하게 된다.
+ 
+ 첫번째 : 페이지가 처음 렌더링 되고 난 후 useEffect는 무조건 한번 실행된다.
+ 
+ 두번째 : useEffect에 배열로 지정한 useState의 값이 변경되면 실행된다.
+ 
+ useEffect는 렌더링, 혹은 변수의 값 혹은 오브젝트가 달라지게 되면, 인지하고 업데이트를 해주는 함수이다.
+ 
+ useEffect는 콜백 함수를 부르게 되며, 렌더링 혹은 값, 오브젝트의 변경에 따라
+ 
+ 어떠한 함수 혹은 여러 개의 함수들을 동작시킬 수 있다.
+  
+ useEffect 사용 방법
+ ```
+ // 1번
+ useEffect(() => {} );  
+
+ // 2번 
+ useEffect(() => {}, [] ); 
+ 
+ useEffect(() => {});
+ ```
+ 
+ 
   ### 기본 형태 -> `useEffect( function, deps)`
   
   - function : 수행하고자 하는 작업
@@ -657,7 +681,9 @@ const [todos, setTodos] = useState([{ text: 'Learn Hooks' }]);
 
   > React 컴포넌트 안에서 데이터 fetching, subsription, DOM을 직접 조작하는 것을 Side effect라고 한다.
   > 
-  > 줄여서 effects라고 한다. 
+  > 줄여서 effects라고 한다. 이
+  >
+  > 
 
 
 
