@@ -354,22 +354,20 @@ ReactDOM.render(
     match.params로 path에 설정한 파라미터 값을 가져올 수 있다.
  
  `
- {path: "/mypage/:userId:, url: "/mypage/ididid", isExact: ture, params: {...}}
- 
-    path: "/mypage/:userId"
- 
-    url: "/mypage/ididid"
- 
-    isExact: true
- 
-    params: {userId: "ididid"}
- 
+ {path: "/mypage/:userId:, url: "/mypage/ididid", isExact: ture, params: {...}} 
+    path: "/mypage/:userId" 
+    url: "/mypage/ididid" 
+    isExact: true 
+    params: {userId: "ididid"} 
     __proto__: Object
  `
 
 > path : [string] 라우터에 정의된 path
+> 
 > url : [string] 실제 클라이언트로부터 요청된 url path
+>
 > isExact : [boolean] true일 경우 전체 경로가 완전히 매칭될 경우헤만 요청을 수행
+> 
 > params : [JSON object] url path로 전달된 파라미터 객체
  
  
@@ -380,7 +378,9 @@ ReactDOM.render(
     ex) 요청 URL `localhost:3000/mypage/ididid?`
  
  > pathname : [string] 현재 페이지의 경로명
+ >
  > search : [string] 현재 페이지의 query string
+ >
  > hash : [string] 현재 페이지의 hash
     
  
