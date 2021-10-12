@@ -353,19 +353,14 @@ ReactDOM.render(
  
     match.params로 path에 설정한 파라미터 값을 가져올 수 있다.
  
- `
- {path: "/mypage/:userId:, url: "/mypage/ididid", isExact: ture, params: {...}} 
- 
-    path: "/mypage/:userId" 
- 
-    url: "/mypage/ididid" 
- 
-    isExact: true 
- 
-    params: {userId: "ididid"} 
- 
+ ```
+ {path: "/mypage/:userId:, url: "/mypage/ididid", isExact: ture, params: {...}}  
+    path: "/mypage/:userId"  
+    url: "/mypage/ididid"  
+    isExact: true  
+    params: {userId: "ididid"}  
     __proto__: Object
- `
+ ```
 
 > path : [string] 라우터에 정의된 path
 > 
@@ -396,30 +391,18 @@ ReactDOM.render(
     담겨있는 형태로 주소를 임의로 변경하거나 되돌아갈 수 있도록 해준다.
  
 ```
- {length/: 6, action: "POP", loaction: {...}, createHref: f, push: f, ...}
- 
-   length: 6
- 
-   acton: "POP"
- 
-   location: {pathname: "/mypage/ididid", serach: "?name=kim", hash: "#hashtag", state: undefined}
- 
-   createHref: f createHrff(loaction)
- 
-   push: f push(path, state)
- 
-   replace: f replace(path, state)
- 
-   go: f go(n)
- 
-   goBack: f goBack()
- 
-   goForward: f goForward()
- 
-   black: f black(prompt)
- 
-   listen: f listen(listener)
- 
+ {length/: 6, action: "POP", loaction: {...}, createHref: f, push: f, ...} 
+   length: 6 
+   acton: "POP" 
+   location: {pathname: "/mypage/ididid", serach: "?name=kim", hash: "#hashtag", state: undefined} 
+   createHref: f createHrff(loaction) 
+   push: f push(path, state) 
+   replace: f replace(path, state) 
+   go: f go(n) 
+   goBack: f goBack() 
+   goForward: f goForward() 
+   black: f black(prompt) 
+   listen: f listen(listener) 
    __proto__: Object
  ```
  
