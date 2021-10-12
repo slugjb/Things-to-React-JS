@@ -641,7 +641,7 @@ const [todos, setTodos] = useState([{ text: 'Learn Hooks' }]);
  객체로 넘겨주거나, 숫자, 문자 타입도 가능하다.
  
  
-## useEffect
+## useEffect      `보충 및 정리 필요` [참고문서](https://overreacted.io/ko/a-complete-guide-to-useeffect/)
 
   useEffect는 몇 가지 조건에 의해 작동하게 된다.
  
@@ -658,16 +658,38 @@ const [todos, setTodos] = useState([{ text: 'Learn Hooks' }]);
  useEffect 사용 방법
  ```
  // 1번
- useEffect(() => {} );  
+ useEffect(() => {});  
 
  // 2번 
- useEffect(() => {}, [] ); 
+ useEffect(() => {}, []); 
  
- useEffect(() => {});
+ // 3번
+ const [name, setName] = useState();
+ useEffect(() => {}, [name]); 
  ```
+ * 1번 : 가장 기본 형태이지만, 이러한 형태는 거의 사용하지 않는다. Dependency가 없기 때문에,
+ 
+        작은 요소라도 변화한다면 계속 useEffect가 발동되어 불필요한 실행이 너무 많아진다.
  
  
-  ### 기본 형태 -> `useEffect( function, deps)`
+ * 2번 : useEffect를 렌더링 후 한 번만 실행하고 싶을 때 사용하는 방법이다.
+ 
+        콜백 함수 뒤에 배열을 나타내는 대괄호가 붙어 있는데, 이곳에 Dependency를 지정한다.
+ 
+        하지만 변수나 값 없이 대괄호만 있다면, useEffect는 렌더링 후 딱 한번만 실행되고,
+ 
+        다시는 실행되지 않는다.
+ 
+ 
+ * 3번 : useEffect를 렌더링 후 한번, 그리고 배열 안 변수의 값이 변할 때마다 실행하는 코드이다.
+ 
+        이렇게 Dependency를 지정해주어 지정된 변수의 값이 변했을 때에만 실행되게 된다.
+ 
+  
+ 
+ 
+ 
+  ### 기본 형태 -> `useEffect(function, deps)`
   
   - function : 수행하고자 하는 작업
   
