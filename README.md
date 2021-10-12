@@ -352,15 +352,37 @@ ReactDOM.render(
     match 객체에는 <Route path>와 URL이 매칭된것에 대한 정보가 담겨져있다.
  
     match.params로 path에 설정한 파라미터 값을 가져올 수 있다.
+ 
+ `
+ {path: "/mypage/:userId:, url: "/mypage/ididid", isExact: ture, params: {...}}
+ 
+    path: "/mypage/:userId"
+ 
+    url: "/mypage/ididid"
+ 
+    isExact: true
+ 
+    params: {userId: "ididid"}
+ 
+    __proto__: Object
+ `
 
-> davadsv
- > >avdasvdas
- vdavdav>vda
+> path : [string] 라우터에 정의된 path
+> url : [string] 실제 클라이언트로부터 요청된 url path
+> isExact : [boolean] true일 경우 전체 경로가 완전히 매칭될 경우헤만 요청을 수행
+> params : [JSON object] url path로 전달된 파라미터 객체
  
-> vdavdav
- > vdavda
- >v vdavda
  
+ * Lacation
+ 
+    loaction 객체에는 현재 페이지의 정보를 가지고 있다. 대표적으로 location.search로 현재 url의 쿼리스트링을 가져올 수 있다.
+ 
+    ex) 요청 URL `localhost:3000/mypage/ididid?`
+ 
+ > pathname : [string] 현재 페이지의 경로명
+ > search : [string] 현재 페이지의 query string
+ > hash : [string] 현재 페이지의 hash
+    
  
  
 
