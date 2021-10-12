@@ -395,7 +395,7 @@ ReactDOM.render(
  
     담겨있는 형태로 주소를 임의로 변경하거나 되돌아갈 수 있도록 해준다.
  
-`
+```
  {length/: 6, action: "POP", loaction: {...}, createHref: f, push: f, ...}
  
    length: 6
@@ -421,7 +421,7 @@ ReactDOM.render(
    listen: f listen(listener)
  
    __proto__: Object
- `
+ ```
  
  > length : [nmber] 전체 history 스택의 길이
  >
