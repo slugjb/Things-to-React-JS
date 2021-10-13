@@ -280,9 +280,9 @@ ReactDOM.render(
  
 ## Fragments -  ``` <Fragment> </Fragment> ``` or ```<> </> ```
 
- React의 일반적인 패턴은 component가 여러개의 요소를 반환하는 것이다. 
+ React의 일반적인 패턴은 component가 여러개의 요소를 반환하는 것이다.  
  React의 규칙 중 하나로, Virtual DOM에서 컴포넌트 변화를 감지해 낼 때 효율적으로  
- 비교 할 수 있도록 컴포넌트 내부는 하나의 DOM트리 구조로 이루어져야 하기 때문이다. 
+ 비교 할 수 있도록 컴포넌트 내부는 하나의 DOM트리 구조로 이루어져야 하기 때문이다.  
  Fragments를 사용하면 DOM에 별도 노드를 추가하지 않고 자식 목록을 그룹화 할 수 있다.
  
  
@@ -299,10 +299,8 @@ ReactDOM.render(
   const a = ...class2; // X
   const a = [...class2]; // O
   ```
-  가장 큰 장점은 조작(mutation)이나 부수 효과(side effect)로 인한 문제를 피할 수 있다.
-  
-  또한, push(), splice(), concat()등의 배열 메소드를 외울 필요 없이 간결하게 코드 작성이 가능하다.
-  
+  가장 큰 장점은 조작(mutation)이나 부수 효과(side effect)로 인한 문제를 피할 수 있다.    
+  또한, push(), splice(), concat()등의 배열 메소드를 외울 필요 없이 간결하게 코드 작성이 가능하다.    
   위 메소드들은 원본 배열 값을 변경하는데, 펼침 연산자는 원본 배열을 변경하지 않는다.
  ```
   const class1 = [1, 2, 3];
