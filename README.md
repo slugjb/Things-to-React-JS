@@ -186,25 +186,21 @@ export default App
    * Construcotr()은 state 값을 초기화 하거나 메소드를 바인딩 하기 위해 사용하고,    
       해당 컴포넌트가 마운트 되기 전에 호출된다.
       
-   * React.Component를 상속한 컴포넌트의 생성자를 구현할 때에는 다른 구문에 앞서,
-     super(props)를 호출해야 한다. 그렇지 않을 시 `this.props`가 생성자 내에서     
+   * React.Component를 상속한 컴포넌트의 생성자를 구현할 때에는 다른 구문에 앞서,  
+     super(props)를 호출해야 한다. 그렇지 않을 시 `this.props`가 생성자 내에서    
      정의되지 않아 버그로 이어질 수 있다.
      
-   * 자바스크립트에서 `super`는 부모 클래스 생성자를 가리키고, super(props) 선언 전까지,
+   * 자바스크립트에서 `super`는 부모 클래스 생성자를 가리키고, super(props) 선언 전까지,  
      constructor에서 `this`키워드를 사용 할 수 없다.
      
-   * 리액트에서는 super가 constructor와 this의 실행순서로 인해 발생하는 문제 때문에, 
+   * 리액트에서는 super가 constructor와 this의 실행순서로 인해 발생하는 문제 때문에,   
      사용하는 것을 권고하고 있다.
      
    * super() 선언 전에 this 사용하게 된다면?
-      > consturctor이 호출된 이후에 props가 세팅된다.
-      > 
-      > 초기화 되었기에 생성자 내부의 this.prop은 undefined가 된다.
-      > 
-      > 초기에는 문제가 없지만, 후에 constructor의 다른 메소드를 수정할 때 문제가 발생한다.
-      > 
-      > 해당 메소드가 super()를 불러오기 전에 실행되지만,
-      > 
+      > consturctor이 호출된 이후에 props가 세팅된다.  
+      > 초기화 되었기에 생성자 내부의 this.prop은 undefined가 된다.  
+      > 초기에는 문제가 없지만, 후에 constructor의 다른 메소드를 수정할 때 문제가 발생한다.  
+      > 해당 메소드가 super()를 불러오기 전에 실행되지만,  
       > this가 아직 변경되지 않았으므로 에러가 발생한다
 
 
@@ -229,9 +225,8 @@ export default App
       "@vue/cli-service": "~4.3.0",
    },
 ```
-   해당 패키지의 패치 레벨 변경을 허용하겠다는 의미이다.
-   
-    4.3.0 이상, 4.4.0 미만과 같은 의미이다.
+   해당 패키지의 패치 레벨 변경을 허용하겠다는 의미이다.  
+   4.3.0 이상, 4.4.0 미만과 같은 의미이다.
 
 2) 캐럿(caret)
 ```
@@ -239,8 +234,7 @@ export default App
      "vue": "^2.6.11"
    }
 ```
-   해당 패키지의 마이너, 패치 변경을 허용하겠다는 의미이다.
-   
+   해당 패키지의 마이너, 패치 변경을 허용하겠다는 의미이다.  
    2.6.11 이상, 3.0.0 미만과 같은 의미이다.
    
 
@@ -248,7 +242,7 @@ export default App
 
 
 ## Entity code
- * 마크업 언어와 충돌하는 것을 방지하기 위해 HEML에서 규정한 문자열의 코드
+ * 마크업 언어와 충돌하는 것을 방지하기 위해 HEML에서 규정한 문자열의 코드  
    특정 문자열을 코드로 표기한 집합이다.
      
      
@@ -281,7 +275,7 @@ ReactDOM.render(
 
 
 ## 바벨(Babel) - 6to5
- ES6(ECMAScript 6)를 ES5(ECMAScript 5)로 변환해준다. 
+ ES6(ECMAScript 6)를 ES5(ECMAScript 5)로 변환해준다.  
  JSX를 브라우저가 읽기 쉬운 ES5 코드로 변환해주고, 이를 바탕으로 개발자가  
  최신 문법을 사용하면서도 여러 브라우저에서 작동될 수 있는 환경 제공
  
@@ -299,7 +293,7 @@ ReactDOM.render(
   * 배열에 포함된 항목을 목록으로 바꿔주는 연산자이다.
   * ...  으로 표시한다.
   * 단독으로 쓰일 수 없다.
-  * 목록으로 바꿨다면 이를 배열이나 객체 등에 담아주어야 한다.
+  * 목록으로 바꿨다면 이를 배열이나 객체 등에 담아주어야 한다.  
        ※ 변수에 담게 되면 에러 발생
   ```
   const class1 = [1, 2, 3];
@@ -344,7 +338,7 @@ ReactDOM.render(
 
  * Match
     
-    match 객체에는 <Route path>와 URL이 매칭된것에 대한 정보가 담겨져있다. 
+    match 객체에는 <Route path>와 URL이 매칭된것에 대한 정보가 담겨져있다.  
     match.params로 path에 설정한 파라미터 값을 가져올 수 있다.
  
  ```
@@ -357,30 +351,31 @@ ReactDOM.render(
  ```
 
 > path : [string] 라우터에 정의된 path
-> 
+>
 > url : [string] 실제 클라이언트로부터 요청된 url path
 >
 > isExact : [boolean] true일 경우 전체 경로가 완전히 매칭될 경우헤만 요청을 수행
-> 
+>
 > params : [JSON object] url path로 전달된 파라미터 객체
  
  
  * Lacation
  
-    loaction 객체에는 현재 페이지의 정보를 가지고 있다. 대표적으로 location.search로 현재 url의 쿼리스트링을 가져올 수 있다.
- 
+    loaction 객체에는 현재 페이지의 정보를 가지고 있다.  
+    대표적으로 location.search로 현재 url의 쿼리스트링을 가져올 수 있다.  
     ex) 요청 URL `localhost:3000/mypage/ididid?`
  
- > pathname : [string] 현재 페이지의 경로명
+ 
+ > pathname : [string] 현재 페이지의 경로명 
  >
- > search : [string] 현재 페이지의 query string
+ > search : [string] 현재 페이지의 query string 
  >
  > hash : [string] 현재 페이지의 hash
     
  
  * History
  
-    history 객체는 브라우저의 history와 유사하다. 스택(stack)에 현재까지 이동한 url 경로들이 
+    history 객체는 브라우저의 history와 유사하다. 스택(stack)에 현재까지 이동한 url 경로들이  
     담겨있는 형태로 주소를 임의로 변경하거나 되돌아갈 수 있도록 해준다.
  
 ```
@@ -450,9 +445,8 @@ ReactDOM.render(
 `보충 필요`
 ## DOM(Document Object Model)
  * 문서의 구성요소들을 객체로 구조화하여 나타낸 것이다.
- * 문서의 구조화된 표현 제공 및 프로그래밍 언어가 DOM 구조에 접근할 수 있는 방법을 제공하며,
-  
-   문서 구조, 스타일, 내용 등을 변경 할 수 있게 돕는다.
+ * 문서의 구조화된 표현 제공 및 프로그래밍 언어가 DOM 구조에 접근할 수 있는 방법을 제공하며,    
+    문서 구조, 스타일, 내용 등을 변경 할 수 있게 돕는다.
  * DOM은 구조화 된 nodes와 property와 method를 갖고 있는 objects로 문서를 표현한다.
  * 웸 페이지를 스크립트 또는 프로그래밍 언어에서 사용될 수 있게 연결시켜주는 역할을 한다.
 
@@ -493,10 +487,10 @@ ReactDOM.render(
 
 ## React Component 생명주기  // VDOM 개념 필요
 
-  모든 컴포넌트는 
-   초기화 -> 업데이트 -> 소멸 단계를 거치게되고,
-   각 단계에서 메소드들이 정해진 순서대로 호출되는데,
-   이때 호출되는 메소드를 생명 주기 메소드라고 부른다.
+  모든 컴포넌트는  
+   초기화 -> 업데이트 -> 소멸 단계를 거치게되고,  
+   각 단계에서 메소드들이 정해진 순서대로 호출되는데,  
+   이때 호출되는 메소드를 생명 주기 메소드라고 부른다.  
 
 
 
@@ -513,13 +507,13 @@ ReactDOM.render(
 
       Mount : 컴포넌트가 처음 실행 되는 것
       
-      컴포넌트가 시작되면 우선 state, context, defaultProps 저장 하고 후에,
-      componentWillMount 메소드를 호출한다. 그리고 render로 컴포넌트를 DOM에
-      부착한 후 Mount가 완료된 후에 componentDidMount가 호출된다.
+      컴포넌트가 시작되면 우선 state, context, defaultProps 저장 하고 후에,  
+      componentWillMount 메소드를 호출한다. 그리고 render로 컴포넌트를 DOM에  
+      부착한 후 Mount가 완료된 후에 componentDidMount가 호출된다.  
       
-      주의할 점은, componentWillMount단계에서는 props나 state를 바꾸면 안 된다.
-      Mount 중이기 때문이고, 아직 DOM에 render하지 않았기 때문에 DOM에도 접근할 수 없다.
-      componentDidMount에서는 DOM에 접근할 수 있기 때문에, 여기서는 주로 AJAX 요청이나,
+      주의할 점은, componentWillMount단계에서는 props나 state를 바꾸면 안 된다.  
+      Mount 중이기 때문이고, 아직 DOM에 render하지 않았기 때문에 DOM에도 접근할 수 없다.  
+      componentDidMount에서는 DOM에 접근할 수 있기 때문에, 여기서는 주로 AJAX 요청이나,  
       setTimeout, setlnterval같은 행동을 한다.
       
    * 업데이트 - 리액트 컴포넌트가 업데이트 되는것을 말함
@@ -537,8 +531,12 @@ ReactDOM.render(
               > 
               > 초기 렌더링 혹은 forceUpdate()호출시에는 호출되지 않는다.
               > 
-              > 렌더링을 방지하여 성능을 최적화하는 목적으로 사용한다.                            
+              > 렌더링을 방지하여 성능을 최적화하는 목적으로 사용한다.    
+ 
+ 
         3) render
+ 
+ 
         4) getSnapshotBeforeUpdate
               > render 메소드 호출 후 DOM 변화를 반영하기 직전에 호출된 메소드이다.
               > 
@@ -561,7 +559,6 @@ ReactDOM.render(
               > 타이머를 제거하거나 데이터구독해제등의 목적으로 사용된다.
               > 
               >   ※ 주의 : componentWillUnmount가 호출된 컴포넌트는 다시
-              >   
               >             렌더링 하지 않으므로, setState를 호출하면 안된다.
      ![image](https://user-images.githubusercontent.com/64000158/136879234-064706da-9a94-45d0-8cf8-ec94bd1b7361.png)
 
@@ -590,7 +587,8 @@ ReactDOM.render(
   * 최상위에서만 Hook 호출이 가능
      * 루프, 조건문, 중첩된 함수 안에서는 사용할 수 없음
      * 조건문을 Hook 내부에 넣는 것은 괜찮음
-  > 컴포넌트가 렌더링 될 때마다 항상 동일한 순서로 Hook이 호출되는것이 보장되어 state를 올바르게 유지 할 수 있다.
+  > 컴포넌트가 렌더링 될 때마다 항상 동일한 순서로 Hook이 호출되는것이  
+     보장되어 state를 올바르게 유지 할 수 있다.
   
   * 리액트 함수 컴포넌트내에서만 호출이 가능하다.
     * 일반 자바스크립트 함수 내에서는 호출하면 안된다.
@@ -602,8 +600,7 @@ ReactDOM.render(
      * higher-order component는 코드 추적이 어렵고 'wrapper hell' 이기 때문이다.
      * Hook은 컴포넌트의 계층을 바꾸지 않고, 상태 로직을 재사용 할 수 있다.
   * 복잡한 컴포넌트는 이해하기 어려움
-     * 여러 Lifecycle 메소드들이 관련 없는 로직들과 섞여 있다.
-      
+     * 여러 Lifecycle 메소드들이 관련 없는 로직들과 섞여 있다.        
        그래서 버그가 자주 발생하고, 무결성 유지가 어렵다.   
   * Class 컴포넌트는 인간과 기계 모두를 혼란스럽게 한다.
      * 리액트의 진입장벽
